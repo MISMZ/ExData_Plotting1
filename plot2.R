@@ -1,4 +1,9 @@
 # Plot 2
+
+# Load packages 
+library(tidyverse)
+library(lubridate)
+
 # Read data
 con_data <- read_delim("household_power_consumption.txt", delim = ";")
 
