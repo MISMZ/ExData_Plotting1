@@ -13,8 +13,6 @@ con_data1 <-  con_data %>%  filter (Date == "2007-02-01" | Date == "2007-02-02")
 con_data1 <- con_data1 %>% mutate(Date = as.POSIXct(paste0(Date,Time))) %>% select(-Time)
 
 # Plot
+png(filename = "plot1.png", width = 480, height = 480)
 hist(con_data1$Global_active_power, breaks = 20, xlab = "Global Active Power (kilowatts)", main = "Global Active Power", ylim = c(0,1200), col = "red")
-
-# Save to PNG file
-dev.copy(png, file = "plot1.png")
 dev.off()
